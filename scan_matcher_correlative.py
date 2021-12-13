@@ -44,7 +44,7 @@ class ScanMatcherCorrelative(object):
                   "Final pose: ({:.6f} m, {:.6f} m, {:.6f} rad)\n" \
                   "# of possible solutions: {}\n" \
                   "# of solutions processed: {}\n"
-            print(msg.format(self.win_x, self.win_y, self.win_theta,
+            print(msg.format(self.win_x * 2, self.win_y * 2, self.win_theta * 2,
                              self.step_x, self.step_y, self.step_theta,
                              self.best_x, self.best_y, self.best_theta,
                              self.best_score,
