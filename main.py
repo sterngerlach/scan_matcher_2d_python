@@ -56,10 +56,17 @@ def main():
     image = image.convert("RGB")
 
     draw_scan(image, grid_map, initial_pose, scan, (0, 0, 255, 0))
+
+    image_before = image.copy()
+    image_before = image_before.transpose(Image.FLIP_TOP_BOTTOM)
+    image_before.save("before-{}.png".format(data_idx))
+    image_before.show()
+
     draw_scan(image, grid_map, pose_branch, scan, (255, 0, 0, 0))
     # draw_scan(image, grid_map, pose_correlative, scan, (0, 255, 0, 0))
 
     image = image.transpose(Image.FLIP_TOP_BOTTOM)
+    image.save("after-{}.png".format(data_idx))
     image.show()
 
 if __name__ == "__main__":
